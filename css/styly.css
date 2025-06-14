@@ -1,0 +1,44 @@
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 背景と全体 */
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+/* メイン画像を中央配置＆レスポンシブ対応 */
+.main-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* パソコンサイズ */
+@media (min-width: 1025px) {
+    .main-visual {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* タブレットサイズ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .main-visual {
+        width: 100%;
+    }
+}
+
+/* スマホサイズ */
+@media (max-width: 767px) {
+    .main-visual {
+        width: 100%;
+    }
+}
