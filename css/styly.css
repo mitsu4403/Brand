@@ -39,7 +39,8 @@ body {
 
 .social-links img {
     width: 160px;
-    height: auto;
+    height: 50px; /* 高さを半分に指定 */
+    object-fit: cover; /* 画像が潰れないようトリミング */
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
@@ -61,6 +62,7 @@ body {
 @media (max-width: 768px) {
     .social-links img {
         width: 100px;
+        height: 30px; /* 同様に高さを縮小 */
     }
 
     .logo {
@@ -76,5 +78,6 @@ body {
 
     .social-links img {
         width: 80%;
+        height: 40px; /* 小画面用に適度に調整 */
     }
 }
