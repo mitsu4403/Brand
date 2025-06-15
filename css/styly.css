@@ -1,44 +1,91 @@
-/* リセット */
-* {
+/* 共通設定 */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
 }
 
-/* 背景と全体 */
-body {
-    font-family: sans-serif;
-    background-color: #ffffff;
+/* ヘッダー */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
 }
 
-/* メイン画像を中央配置＆レスポンシブ対応 */
-.main-visual img {
+.logo {
+    height: 50px;
+}
+
+.nav-icons img {
+    height: 40px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.nav-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* メインビジュアル */
+.main-visual {
     width: 100%;
-    height: auto;
-    display: block;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    height: auto;
 }
 
-/* パソコンサイズ */
-@media (min-width: 1025px) {
-    .main-visual {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
+/* リンクセクション */
+.link-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.link-section img {
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+    transition: opacity 0.3s;
+}
+
+.link-section img:hover {
+    opacity: 0.8;
+}
+
+/* フッター */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    font-size: 0.9em;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .nav-icons img {
+        height: 30px;
     }
-}
 
-/* タブレットサイズ */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .main-visual {
-        width: 100%;
+    .logo {
+        height: 40px;
     }
-}
 
-/* スマホサイズ */
-@media (max-width: 767px) {
-    .main-visual {
-        width: 100%;
+    .link-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-section img {
+        width: 80%;
     }
 }
