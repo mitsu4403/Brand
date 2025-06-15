@@ -12,20 +12,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #111;
+    padding: 10px 0; /* 左右のpaddingを0に */
+    background-color: #000; /* 背景を黒に変更 */
+    width: 100%;
 }
 
-.logo {
-    height: 50px;
+/* 4つの画像が均等に並ぶように調整 */
+.nav-icons {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    padding: 0 10px;
 }
 
 .nav-icons img {
     height: 40px;
-    margin-left: 10px;
+    margin: 0; /* 不要なマージンを削除 */
     transition: transform 0.3s;
+    flex: 1;
+    object-fit: contain;
 }
 
+/* ホバー時の拡大 */
 .nav-icons img:hover {
     transform: scale(1.1);
 }
@@ -48,7 +56,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 40px 20px;
+    padding: 40px 0; /* 左右の余白なし */
 }
 
 .link-section img {
@@ -65,8 +73,8 @@ body {
 /* フッター */
 .footer {
     text-align: center;
-    padding: 20px;
-    background-color: #111;
+    padding: 20px 0;
+    background-color: #000; /* 背景を黒に変更 */
     font-size: 0.9em;
 }
 
@@ -74,10 +82,6 @@ body {
 @media (max-width: 768px) {
     .nav-icons img {
         height: 30px;
-    }
-
-    .logo {
-        height: 40px;
     }
 
     .link-section {
