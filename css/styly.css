@@ -1,112 +1,80 @@
-/* 共通設定 */
+/* 全体設定 */
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
-    font-family: 'Arial', sans-serif;
     color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ヘッダー */
-.header {
+/* ヘッダー（ロゴのみ） */
+.site-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-/* ナビゲーションアイコンコンテナ */
-.nav-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
+    padding: 1em 0;
     background-color: #000;
 }
 
-/* 各画像を均等に並べる */
-.nav-icons img {
-    flex: 1;
-    max-width: 100%;
-    height: 60px;
-    object-fit: contain;
-    transition: transform 0.3s;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-}
-
-/* ホバー時の拡大 */
-.nav-icons img:hover {
-    transform: scale(1.1);
+.logo {
+    width: 180px;
 }
 
 /* メインビジュアル */
-.main-visual {
+.hero img {
     width: 100%;
-    text-align: center;
-    background-color: #000;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 1200px;
     height: auto;
-    background-color: #000;
+    display: block;
+    border-bottom: 2px solid #0ff;
 }
 
-/* リンクセクション */
-.link-section {
+/* ソーシャルリンク */
+.social-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 40px 0;
-    background-color: #000;
+    gap: 1.5em;
+    padding: 2em 1em;
 }
 
-.link-section img {
-    width: 250px;
-    max-width: 90%;
+.social-links img {
+    width: 160px;
     height: auto;
-    transition: opacity 0.3s;
-    background-color: #000;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.link-section img:hover {
-    opacity: 0.8;
+.social-links img:hover {
+    transform: scale(1.05);
 }
 
 /* フッター */
-.footer {
+.site-footer {
     text-align: center;
-    padding: 20px 0;
-    background-color: #000;
+    padding: 1em;
     font-size: 0.9em;
+    background-color: #111;
+    color: #888;
 }
 
-/* レスポンシブデザイン */
+/* レスポンシブ対応 */
 @media (max-width: 768px) {
-    .nav-icons {
-        flex-direction: column;
-        background-color: #000;
+    .social-links img {
+        width: 100px;
     }
 
-    .nav-icons img {
-        height: 40px;
-        width: 100%;
+    .logo {
+        width: 140px;
     }
+}
 
-    .link-section {
+@media (max-width: 480px) {
+    .social-links {
         flex-direction: column;
         align-items: center;
     }
 
-    .link-section img {
+    .social-links img {
         width: 80%;
     }
 }
