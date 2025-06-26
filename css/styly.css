@@ -1,83 +1,138 @@
-/* 全体設定 */
+/* -------------------------
+   共通（デフォルト：PC表示）
+-------------------------- */
 body {
     margin: 0;
     padding: 0;
     background-color: #000;
+    font-family: sans-serif;
     color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ヘッダー（ロゴのみ） */
-.site-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0;
-    background-color: #000;
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.logo {
-    width: 180px;
+/* 背景画像と重ね要素の親 */
+.image-overlay-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* メインビジュアル */
-.hero img {
+/* 背景画像（最背面） */
+.main-image {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 2px solid #0ff;
 }
 
-/* ソーシャルリンク */
-.social-links {
+/* ロゴ画像（左上に重ねる） */
+.overlay-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.overlay-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+/* ソーシャルリンク群（右上に縦並びで重ねる） */
+.overlay-social {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5em;
-    padding: 2em 1em;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
 }
 
-.social-links img {
-    width: 160px;
-    height: 50px; /* 高さを半分に指定 */
-    object-fit: cover; /* 画像が潰れないようトリミング */
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.overlay-social img {
+    width: 80px;
+    height: auto;
+    border: 1px solid #555;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.social-links img:hover {
+.overlay-social img:hover {
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 /* フッター */
-.site-footer {
+.footer {
     text-align: center;
-    padding: 1em;
-    font-size: 0.9em;
+    padding: 20px;
+    font-size: 14px;
+    color: #ccc;
     background-color: #111;
-    color: #888;
+    margin-top: 40px;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 768px) {
-    .social-links img {
-        width: 100px;
-        height: 30px; /* 同様に高さを縮小 */
-    }
-
-    .logo {
-        width: 140px;
-    }
-}
-
-@media (max-width: 480px) {
-    .social-links {
+/* -------------------------
+   モバイル表示（スマホ向け）
+-------------------------- */
+@media screen and (max-width: 768px) {
+    /* 背景・ロゴ・SNS画像を縦に並べる */
+    .image-overlay-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        position: static; /* position: relative を解除 */
     }
 
-    .social-links img {
-        width: 80%;
-        height: 40px; /* 小画面用に適度に調整 */
+    /* ロゴ：先頭に表示 */
+    .overlay-logo {
+        position: static;
+        order: 0;
+        margin: 0 auto 10px;
+        text-align: center;
+    }
+
+    .overlay-logo img {
+        width: 100px;
+        height: auto;
+    }
+
+    /* 背景画像：ロゴの次 */
+    .main-image {
+        position: static;
+        order: 1;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* SNSリンク群：背景画像の次に */
+    .overlay-social {
+        position: static;
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .overlay-social img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* フッター */
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+        text-align: center;
     }
 }
