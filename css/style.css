@@ -1,5 +1,5 @@
 /* -------------------------
-   ‹¤’ÊiƒfƒtƒHƒ‹ƒgFPC•\¦j
+   å…±é€šï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆï¼šPCè¡¨ç¤ºï¼‰
 -------------------------- */
 body {
     margin: 0;
@@ -15,21 +15,21 @@ body {
     padding: 20px;
 }
 
-/* ”wŒi‰æ‘œ‚Æd‚Ë—v‘f‚Ìe */
+/* èƒŒæ™¯ç”»åƒã¨é‡ã­è¦ç´ ã®è¦ª */
 .image-overlay-container {
     position: relative;
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* ”wŒi‰æ‘œiÅ”w–Êj */
+/* èƒŒæ™¯ç”»åƒï¼ˆæœ€èƒŒé¢ï¼‰ */
 .main-image {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* ƒƒS‰æ‘œi¶ã‚Éd‚Ë‚éj */
+/* ãƒ­ã‚´ç”»åƒï¼ˆå·¦ä¸Šã«é‡ã­ã‚‹ï¼‰ */
 .overlay-logo {
     position: absolute;
     top: 20px;
@@ -42,7 +42,7 @@ body {
     height: 100px;
 }
 
-/* ƒ\[ƒVƒƒƒ‹ƒŠƒ“ƒNŒQi‰Eã‚Éc•À‚Ñ‚Åd‚Ë‚éj */
+/* ã‚½ãƒ¼ã‚·ãƒ£ãƒ«ãƒªãƒ³ã‚¯ç¾¤ï¼ˆå³ä¸Šã«ç¸¦ä¸¦ã³ã§é‡ã­ã‚‹ï¼‰ */
 .overlay-social {
     position: absolute;
     top: 20px;
@@ -68,7 +68,7 @@ body {
     filter: brightness(1.2);
 }
 
-/* ƒtƒbƒ^[ */
+/* ãƒ•ãƒƒã‚¿ãƒ¼ */
 .footer {
     text-align: center;
     padding: 20px;
@@ -79,18 +79,18 @@ body {
 }
 
 /* -------------------------
-   ƒ‚ƒoƒCƒ‹•\¦iƒXƒ}ƒzŒü‚¯j
+   ãƒ¢ãƒã‚¤ãƒ«è¡¨ç¤ºï¼ˆã‚¹ãƒãƒ›å‘ã‘ï¼‰
 -------------------------- */
 @media screen and (max-width: 768px) {
-    /* ”wŒiEƒƒSESNS‰æ‘œ‚ğc‚É•À‚×‚é */
+    /* èƒŒæ™¯ãƒ»ãƒ­ã‚´ãƒ»SNSç”»åƒã‚’ç¸¦ã«ä¸¦ã¹ã‚‹ */
     .image-overlay-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: static; /* position: relative ‚ğ‰ğœ */
+        position: static; /* position: relative ã‚’è§£é™¤ */
     }
 
-    /* ƒƒSFæ“ª‚É•\¦ */
+    /* ãƒ­ã‚´ï¼šå…ˆé ­ã«è¡¨ç¤º */
     .overlay-logo {
         position: static;
         order: 0;
@@ -103,7 +103,7 @@ body {
         height: auto;
     }
 
-    /* ”wŒi‰æ‘œFƒƒS‚ÌŸ */
+    /* èƒŒæ™¯ç”»åƒï¼šãƒ­ã‚´ã®æ¬¡ */
     .main-image {
         position: static;
         order: 1;
@@ -112,7 +112,7 @@ body {
         margin-bottom: 10px;
     }
 
-    /* SNSƒŠƒ“ƒNŒQF”wŒi‰æ‘œ‚ÌŸ‚É */
+    /* SNSãƒªãƒ³ã‚¯ç¾¤ï¼šèƒŒæ™¯ç”»åƒã®æ¬¡ã« */
     .overlay-social {
         position: static;
         order: 2;
@@ -129,7 +129,7 @@ body {
         height: auto;
     }
 
-    /* ƒtƒbƒ^[ */
+    /* ãƒ•ãƒƒã‚¿ãƒ¼ */
     .footer {
         font-size: 12px;
         padding: 15px;
