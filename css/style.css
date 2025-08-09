@@ -22,11 +22,21 @@ body {
     margin: 0 auto;
 }
 
-/* 背景画像（最背面） */
+/* 背景画像（最背面）
+   フェードイン用のスタイルと、その他のスタイルを統合 */
 .main-image {
     width: 100%;
     height: auto;
     display: block;
+
+    /* フェードイン用のスタイル */
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* JavaScriptで追加されるクラス */
+.main-image.fade-in {
+    opacity: 1;
 }
 
 /* ロゴ画像（左上に重ねる） */
@@ -87,7 +97,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        position: static; /* position: relative を解除 */
+        position: static;
     }
 
     /* ロゴ：先頭に表示 */
@@ -104,12 +114,16 @@ body {
     }
 
     /* 背景画像：ロゴの次 */
-    .main-image {
+    .main-image { /* ここにすべてのスタイルを統合 */
         position: static;
         order: 1;
         width: 100%;
         height: auto;
         margin-bottom: 10px;
+
+        /* フェードイン用のスタイルもここに統合 */
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
     }
 
     /* SNSリンク群：背景画像の次に */
