@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const imgs = Array.from(document.querySelectorAll('img[data-alt-src]'));
     if (!imgs.length) return;
 
-    const intervalMs = 10000; // 切替間隔（ms）をここで調整
+    const intervalMs = 7500; // 切替間隔（ms）をここで調整
     const fadeMs = 300;      // CSS の transition と合わせるフェード時間（ms）
 
     // 初期化：元の src を保存し、代替画像をプリロード
