@@ -64,7 +64,7 @@ body {
 }
 
 .overlay-social img {
-    width: 80px;
+    width: 120px;
     height: auto;
     border: 1px solid #555;
     background-color: rgba(0, 0, 0, 0.4);
@@ -87,7 +87,15 @@ body {
     background-color: #111;
     margin-top: 40px;
 }
-
+/* data-alt-src を持つ画像はフェードで切替 */
+img[data-alt-src] {
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+    opacity: 1;
+    /* 表示サイズ調整が必要なら下を編集 */
+    max-width: 48px;
+    height: auto;
+}
 /* -------------------------
    モバイル表示（スマホ向け）
 -------------------------- */
