@@ -1,50 +1,625 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mitsu</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="image-overlay-container">
-            <!-- 背景画像 -->
-            <img src="image/image001.jpg" alt="Main Visual" class="main-image">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>H2O COMMUNITY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
 
-            <!-- ロゴ -->
-            <a href="index.html" class="overlay-logo">
-                <img src="image/logo.png" alt="H2O Logo">
-            </a>
+      :root {
+        --kinari: #f4efe3;
+        --kinari-deep: #ece4d0;
+        --sumi: #2e2d2a;
+        --sumi-soft: #55534c;
+        --ai: #1f3a5f;
+        --ai-deep: #16294a;
+        --ai-mid: #2f5d8a;
+        --asagi: #4f83a8;
+        --mizuiro: #9dc3d9;
+        --mizu-pale: #d7e8f0;
+        --card-bg: #faf7ee;
+        --line: rgba(31, 58, 95, 0.22);
+        --wave-1: #2f5d8a;
+        --wave-2: #4f83a8;
+        --wave-3: #1f3a5f;
+        --seigaiha: rgba(31, 58, 95, 0.055);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --kinari: #101c30;
+          --kinari-deep: #0c1626;
+          --sumi: #e9e4d4;
+          --sumi-soft: #b9b4a4;
+          --ai: #9dc3d9;
+          --ai-deep: #d7e8f0;
+          --ai-mid: #7ba7c4;
+          --asagi: #5d90b3;
+          --mizuiro: #4f83a8;
+          --mizu-pale: #22354f;
+          --card-bg: #16263e;
+          --line: rgba(157, 195, 217, 0.28);
+          --wave-1: #1d3a5c;
+          --wave-2: #26507c;
+          --wave-3: #2f5d8a;
+          --seigaiha: rgba(157, 195, 217, 0.05);
+          color-scheme: dark;
+        }
+      }
 
-            <!-- ソーシャルリンク -->
-            <div class="overlay-social">
-                <a href="https://www.instagram.com/mitsu4403" target="_blank">
-                    <img id="Instagram-img" src="image/image002.jpg" data-alt-src="image/image002_2.jpg" alt="Instagram">
-                </a>
-                <a href="https://x.com/mitsu4403" target="_blank">
-                    <img id="X-img" src="image/image003.jpg" data-alt-src="image/image003_2.jpg" alt="X">
-                </a>
-                <a href="https://www.youtube.com/@mitsu4403" target="_blank">
-                    <img id="youtube-img" src="image/image004.jpg" data-alt-src="image/image004_2.jpg" alt="YouTube">
-                </a>
-                <a href="https://www.h2ocommunity.net" target="_blank">
-                    <img id="Blog-img" src="image/image005.jpg" data-alt-src="image/image005_2.jpg" alt="Blog">
-                </a>
-                <a href="https://bsky.app/profile/mitsu4403.bsky.social" target="_blank">
-                    <img id="Bluesky-img" src="image/image006.jpg" data-alt-src="image/image006_2.jpg" alt="Bluesky">
-                </a>
-                <a href="https://jp.pinterest.com/mitsu4403/" target="_blank">
-                    <img id="Pinterest-img" src="image/image007.jpg" data-alt-src="image/image007_2.jpg" alt="Pinterest">                   
-                </a>
-            </div>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--kinari);
+        color: var(--sumi);
+        font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+        line-height: 1.9;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .mincho { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; }
+
+      /* 青海波の地紋 */
+      .seigaiha-bg {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cg fill='none' stroke='%231f3a5f' stroke-width='1'%3E%3Cpath d='M-36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M-24 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M-12 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M0 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M12 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M24 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M48 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M60 36a12 12 0 0 1 24 0'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 72px 36px;
+      }
+      @media (prefers-color-scheme: dark) {
+        .seigaiha-bg {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cg fill='none' stroke='%239dc3d9' stroke-width='1'%3E%3Cpath d='M-36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M-24 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M-12 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M0 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M12 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M24 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M48 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M60 36a12 12 0 0 1 24 0'/%3E%3C/g%3E%3C/svg%3E");
+        }
+      }
+
+      /* ---------- ヒーロー ---------- */
+      .hero {
+        position: relative;
+        min-height: 92svh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--kinari) 0%, var(--mizu-pale) 78%, var(--mizuiro) 100%);
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 3;
+        flex: 1;
+        width: min(1080px, 100%);
+        margin: 0 auto;
+        padding: clamp(2.5rem, 7vh, 5rem) 1.5rem 9rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero .tate {
+        position: absolute;
+        top: clamp(2rem, 6vh, 4rem);
+        right: clamp(1.25rem, 5vw, 4rem);
+        writing-mode: vertical-rl;
+        font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+        letter-spacing: 0.42em;
+        color: var(--ai);
+        opacity: 0.85;
+        z-index: 3;
+      }
+      .hero .tate .dot { color: var(--asagi); }
+      .site-name {
+        font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-weight: 700;
+        font-size: clamp(2.6rem, 8.5vw, 5.2rem);
+        line-height: 1.25;
+        letter-spacing: 0.06em;
+        color: var(--ai-deep);
+        margin: 0;
+      }
+      .site-name .h2o {
+        background: linear-gradient(100deg, var(--ai-deep) 10%, var(--ai-mid) 55%, var(--asagi) 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+      .site-domain {
+        margin: 0.4rem 0 0;
+        font-size: clamp(0.95rem, 2.6vw, 1.2rem);
+        letter-spacing: 0.34em;
+        color: var(--ai-mid);
+      }
+      .hero-lead {
+        margin: 2.2rem 0 0;
+        max-width: 34em;
+        font-size: clamp(1rem, 2.6vw, 1.13rem);
+        color: var(--sumi);
+      }
+      .hero-lead strong { color: var(--ai); font-weight: 700; }
+      .hero-cta {
+        margin-top: 2.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        min-height: 48px;
+        padding: 0.65rem 1.6rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      }
+      .btn-primary {
+        background: linear-gradient(120deg, var(--ai-deep), var(--ai-mid));
+        color: #f4efe3;
+        box-shadow: 0 10px 24px rgba(22, 41, 74, 0.28);
+      }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(22, 41, 74, 0.34); }
+      .btn-ghost {
+        border: 1.5px solid var(--ai-mid);
+        color: var(--ai);
+        background: transparent;
+      }
+      .btn-ghost:hover { background: rgba(79, 131, 168, 0.12); transform: translateY(-2px); }
+      @media (prefers-color-scheme: dark) {
+        .btn-ghost { color: var(--mizuiro); border-color: var(--asagi); }
+      }
+
+      /* 波レイヤー */
+      .waves {
+        position: absolute;
+        left: 0; right: 0; bottom: -4px;
+        height: clamp(110px, 20vh, 190px);
+        z-index: 2;
+        pointer-events: none;
+      }
+      .waves svg {
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 200%;
+        height: 100%;
+        will-change: transform;
+      }
+      .wave-a { fill: var(--wave-2); opacity: 0.35; animation: drift 26s linear infinite; }
+      .wave-b { fill: var(--wave-1); opacity: 0.5; animation: drift 17s linear infinite reverse; }
+      .wave-c { fill: var(--wave-3); opacity: 0.9; animation: drift 38s linear infinite; }
+      @keyframes drift {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+
+      /* 波紋（クリックで広がる） */
+      .ripple {
+        position: absolute;
+        border: 2px solid var(--asagi);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.7;
+        pointer-events: none;
+        z-index: 4;
+        animation: ripple-grow 1.6s ease-out forwards;
+      }
+      @keyframes ripple-grow {
+        to { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+      }
+      /* ---------- セクション共通 ---------- */
+      section { position: relative; }
+      .wrap {
+        width: min(1080px, 100%);
+        margin: 0 auto;
+        padding: clamp(3.5rem, 9vh, 6rem) 1.5rem;
+      }
+      .sec-head {
+        display: flex;
+        align-items: baseline;
+        gap: 1.1rem;
+        margin-bottom: 2.2rem;
+      }
+      .sec-head .tate-label {
+        writing-mode: vertical-rl;
+        font-family: "Shippori Mincho", serif;
+        letter-spacing: 0.34em;
+        font-size: 0.85rem;
+        color: var(--asagi);
+        border-right: 1px solid var(--line);
+        padding-right: 0.7rem;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+      }
+      .sec-head h2 {
+        font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: clamp(1.7rem, 5vw, 2.4rem);
+        font-weight: 700;
+        color: var(--ai-deep);
+        margin: 0;
+        letter-spacing: 0.08em;
+      }
+      .sec-head p { margin: 0.3rem 0 0; color: var(--sumi-soft); font-size: 0.95rem; }
+
+      /* 出現は「隠してから出す」方式にせず、常に表示する（捕捉・印刷でも欠けない） */
+      .reveal { opacity: 1; }
+
+      /* ---------- 入口（短冊カード） ---------- */
+      .portal { background: var(--kinari); }
+      .portal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.1rem;
+      }
+      .tag-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 1.5rem 1.4rem 1.3rem;
+        background: var(--card-bg);
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--ai-mid);
+        border-radius: 4px 4px 14px 14px;
+        text-decoration: none;
+        color: var(--sumi);
+        box-shadow: 0 4px 14px rgba(22, 41, 74, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+      .tag-card::after {
+        content: "";
+        position: absolute;
+        inset: auto -30% -70% auto;
+        width: 180px; height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(79, 131, 168, 0.16), transparent 65%);
+        transition: transform 0.5s ease;
+      }
+      .tag-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(22, 41, 74, 0.14); }
+      .tag-card:hover::after { transform: scale(1.5); }
+      .tag-card .hole {
+        position: absolute;
+        top: 12px; left: 50%;
+        transform: translateX(-50%);
+        width: 9px; height: 9px;
+        border-radius: 50%;
+        border: 1.5px solid var(--asagi);
+        background: var(--kinari);
+      }
+      .tag-card .kind {
+        margin-top: 0.5rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.28em;
+        color: var(--asagi);
+        font-weight: 700;
+      }
+      .tag-card h3 {
+        font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: 1.3rem;
+        margin: 0;
+        color: var(--ai-deep);
+        letter-spacing: 0.04em;
+      }
+      .tag-card p { margin: 0; font-size: 0.92rem; color: var(--sumi-soft); line-height: 1.75; }
+      .tag-card .go {
+        margin-top: auto;
+        padding-top: 0.7rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--ai-mid);
+        letter-spacing: 0.1em;
+      }
+      .tag-card.featured {
+        grid-column: span 1;
+        background: linear-gradient(150deg, var(--ai-deep), var(--ai-mid) 70%, var(--asagi));
+        border-top-color: var(--mizuiro);
+        color: #eef4f8;
+      }
+      .tag-card.featured h3 { color: #ffffff; }
+      .tag-card.featured p { color: rgba(238, 244, 248, 0.85); }
+      .tag-card.featured .kind { color: var(--mizuiro); }
+      .tag-card.featured .go { color: #ffffff; }
+      .tag-card.featured .hole { background: var(--ai-deep); border-color: var(--mizuiro); }
+      @media (min-width: 760px) {
+        .tag-card.featured { grid-column: span 2; }
+      }
+
+      /* ---------- 名前の由来（入口内） ---------- */
+      .origin {
+        max-width: 44em;
+        margin-bottom: 2.4rem;
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .origin-follow { margin: 1.1rem 0 0; }
+      .origin-formula {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.4rem 0.9rem;
+        margin: 0 0 0.9rem;
+        font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        color: var(--ai-deep);
+      }
+      .origin-term {
+        font-size: clamp(1.7rem, 5vw, 2.2rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+      }
+      .origin-term small {
+        margin-left: 0.45rem;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        color: var(--asagi);
+      }
+      .origin-op { font-size: 1.15rem; color: var(--asagi); }
+      .origin-name {
+        font-size: clamp(1.7rem, 5vw, 2.2rem);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        line-height: 1.2;
+        background: linear-gradient(100deg, var(--ai-deep) 10%, var(--ai-mid) 55%, var(--asagi) 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+      .origin-text { margin: 0; }
+
+      /* ---------- 流れの帯 ---------- */
+      .stream {
+        padding: 0;
+        background: linear-gradient(120deg, var(--ai-deep), var(--ai-mid) 60%, var(--asagi));
+        color: #eef4f8;
+        overflow: hidden;
+      }
+      .stream .wrap { padding-top: 3rem; padding-bottom: 3rem; text-align: center; }
+      .stream .mincho {
+        font-size: clamp(1.3rem, 4.4vw, 1.9rem);
+        letter-spacing: 0.14em;
+        margin: 0 0 0.6rem;
+      }
+      .stream p { margin: 0; color: rgba(238, 244, 248, 0.85); font-size: 0.95rem; }
+      .stream a { color: #ffffff; font-weight: 700; }
+
+      /* ---------- フッター ---------- */
+      footer {
+        background: var(--ai-deep);
+        color: #cfdde8;
+      }
+      @media (prefers-color-scheme: dark) {
+        footer { background: #0a1424; }
+      }
+      footer .wrap {
+        padding-top: 2.6rem; padding-bottom: 2.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem 2.5rem;
+        align-items: center;
+        justify-content: space-between;
+      }
+      footer .fname {
+        font-family: "Shippori Mincho", serif;
+        font-size: 1.25rem;
+        letter-spacing: 0.14em;
+        color: #ffffff;
+      }
+      footer .copy { font-size: 0.8rem; color: rgba(207, 221, 232, 0.65); margin: 0; }
+
+      #toTop {
+        position: fixed;
+        right: 1.1rem;
+        bottom: 1.1rem;
+        z-index: 10;
+        width: 52px; height: 52px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--card-bg);
+        color: var(--ai);
+        font-family: "Shippori Mincho", serif;
+        font-size: 1.05rem;
+        cursor: pointer;
+        box-shadow: 0 8px 22px rgba(22, 41, 74, 0.22);
+        opacity: 0.92;
+        transition: opacity 0.35s ease, transform 0.35s ease;
+      }
+      #toTop.show { opacity: 1; transform: translateY(-3px); }
+
+      /* スマホ幅：縦書きと注記が本文・ボタンに重ならないようにする */
+      @media (max-width: 640px) {
+        .hero-inner { padding-right: 3.4rem; padding-bottom: 8.2rem; }
+        .hero .tate {
+          top: 1.4rem;
+          right: 0.9rem;
+          font-size: 0.85rem;
+          letter-spacing: 0.3em;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .wave-a, .wave-b, .wave-c { animation: none; }
+        .ripple { display: none; }
+        .btn, .tag-card, #toTop { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヒーロー -->
+    <header class="hero" id="hero">
+      <div class="hero-inner">
+        <h1 class="site-name"><span class="h2o">H2O</span> COMMUNITY</h1>
+        <p class="site-domain">h2ocommunity.jp</p>
+        <p class="hero-lead">
+          街を歩き、映画を観て、本を読み、ITを学ぶ。
+          そんな日々の記録を集めた、<strong>小さな入口</strong>です。
+          ブログと各SNSへの扉を、ここに並べました。
+        </p>
+      </div>
+      <div class="waves" aria-hidden="true">
+        <svg class="wave-a" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,110 C240,60 480,160 720,110 C960,60 1200,160 1440,110 C1680,60 1920,160 2160,110 C2400,60 2640,160 2880,110 L2880,200 L0,200 Z"/></svg>
+        <svg class="wave-b" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,130 C260,85 500,175 760,130 C1020,85 1180,175 1440,130 C1700,85 1940,175 2200,130 C2460,85 2620,175 2880,130 L2880,200 L0,200 Z"/></svg>
+        <svg class="wave-c" viewBox="0 0 2880 200" preserveAspectRatio="none"><path d="M0,155 C300,120 540,185 840,155 C1140,125 1260,185 1560,155 C1860,125 2100,185 2400,155 C2640,132 2760,175 2880,155 L2880,200 L0,200 Z"/></svg>
+      </div>
+    </header>
+
+    <!-- 入口 -->
+    <section class="portal seigaiha-bg" id="portal">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="tate-label">入口</span>
+          <div>
+            <h2>入口いろいろ</h2>
+            <p>h2ocommunity は、ひとりの「好き」と「学び」の集まりです。</p>
+          </div>
         </div>
-    </div>
-    <footer class="footer">
-        © 2025 H2O COMMUNITY All Rights Reserved.
-    </footer>
-    <script src="js/css_transition.js"></script>
-</body>
+        <div class="origin reveal">
+          <p class="origin-formula">
+            <span class="origin-term">人<small>Human</small></span>
+            <span class="origin-op" aria-hidden="true">×</span>
+            <span class="origin-term">水<small>Water</small></span>
+            <span class="origin-op" aria-hidden="true">＝</span>
+            <span class="origin-name">H2O</span>
+          </p>
+          <p class="origin-text">
+            名前の由来は、人（Human）と水のかけ合わせ。
+            人に欠かせないのは、水と、もうひとつ——人とのつながり。
+            水辺に集うように、人がゆるやかに集まる場所。
+            それが、H2O COMMUNITY です。
+          </p>
+          <p class="origin-follow">
+            街を歩くのが好きで、映画館に通い、本を読み、
+            ITの資格試験にも挑戦しています。
+            そうした日々の記録を、ブログとSNSに少しずつ残してきました。
+          </p>
+        </div>
+        <div class="portal-grid">
+          <a class="tag-card reveal" href="https://www.h2ocommunity.net" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">散歩 ／ ブログ</span>
+            <h3>散歩の記録</h3>
+            <p>ブログ『ハマっ子、ぶらりハマ旅』で綴る、街の散歩、映画館、食事の記録と、IT資格試験への挑戦。</p>
+            <span class="go">h2ocommunity.net へ →</span>
+          </a>
+          <a class="tag-card reveal" href="https://www.youtube.com/@mitsu4403" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">鍛錬 ／ YouTube</span>
+            <h3>鍛錬の記録</h3>
+            <p>チャンネル「mitsuCHANNEL」で、腹筋ローラーのショート動画を、回数付きでコツコツ投稿中。</p>
+            <span class="go">YouTube へ →</span>
+          </a>
+          <a class="tag-card reveal" href="https://x.com/mitsu4403" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">映画 ／ X</span>
+            <h3>映画の記録</h3>
+            <p>観た映画の記録を、ひと言ずつ。名優の名前とともに。</p>
+            <span class="go">X へ →</span>
+          </a>
+          <a class="tag-card reveal" href="https://www.instagram.com/mitsu4403" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">読書 ／ Instagram</span>
+            <h3>読書の記録</h3>
+            <p>読み終えた本の記録。ミステリーを中心に、表紙とともに。</p>
+            <span class="go">Instagram へ →</span>
+          </a>
+          <a class="tag-card reveal" href="https://bsky.app/profile/mitsu4403.bsky.social" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">アニメ ／ Bluesky</span>
+            <h3>アニメの記録</h3>
+            <p>観たアニメの記録を短く、1日1作品ずつのペースで。</p>
+            <span class="go">Bluesky へ →</span>
+          </a>
+          <a class="tag-card reveal" href="https://www.pinterest.jp/mitsu4403/" target="_blank" rel="noopener">
+            <span class="hole" aria-hidden="true"></span>
+            <span class="kind">技術書 ／ Pinterest</span>
+            <h3>技術書の記録</h3>
+            <p>気になるIT・技術書の表紙をピンで集めた、本棚のような記録。</p>
+            <span class="go">Pinterest へ →</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
+    <footer>
+      <div class="wrap">
+        <span class="fname">H2O COMMUNITY</span>
+        <p class="copy">© h2ocommunity.jp</p>
+      </div>
+    </footer>
+
+    <button id="toTop" type="button" aria-label="トップへ戻る">上</button>
+
+    <script>
+      (function () {
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* スクロールでふわりと現れる */
+        var revealEls = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window && !reduceMotion) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.12 });
+          revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+          revealEls.forEach(function (el) { el.classList.add("in"); });
+        }
+
+        /* ヒーローの水面タップで波紋 */
+        var hero = document.getElementById("hero");
+        hero.addEventListener("pointerdown", function (ev) {
+          if (reduceMotion) return;
+          if (ev.target.closest("a, button")) return;
+          var rect = hero.getBoundingClientRect();
+          var size = 130 + Math.random() * 90;
+          var ripple = document.createElement("span");
+          ripple.className = "ripple";
+          ripple.style.width = size + "px";
+          ripple.style.height = size + "px";
+          ripple.style.left = (ev.clientX - rect.left) + "px";
+          ripple.style.top = (ev.clientY - rect.top) + "px";
+          hero.appendChild(ripple);
+          window.setTimeout(function () { ripple.remove(); }, 1700);
+        });
+
+        /* 波のパララックス（スクロールでわずかにずれる） */
+        var waves = document.querySelector(".waves");
+        if (!reduceMotion && waves) {
+          var ticking = false;
+          window.addEventListener("scroll", function () {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(function () {
+              var y = Math.min(window.scrollY, window.innerHeight);
+              waves.style.transform = "translateY(" + y * 0.12 + "px)";
+              ticking = false;
+            });
+          }, { passive: true });
+        }
+
+        /* トップへ戻る */
+        var toTop = document.getElementById("toTop");
+        window.addEventListener("scroll", function () {
+          toTop.classList.toggle("show", window.scrollY > window.innerHeight * 0.7);
+        }, { passive: true });
+        toTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+        });
+      })();
+    </script>
+  </body>
 </html>
