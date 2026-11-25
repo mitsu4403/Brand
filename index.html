@@ -405,25 +405,6 @@
       }
       footer .copy { font-size: 0.8rem; color: rgba(207, 221, 232, 0.65); margin: 0; }
 
-      #toTop {
-        position: fixed;
-        right: 1.1rem;
-        bottom: 1.1rem;
-        z-index: 10;
-        width: 52px; height: 52px;
-        border-radius: 50%;
-        border: 1px solid var(--line);
-        background: var(--card-bg);
-        color: var(--ai);
-        font-family: "Shippori Mincho", serif;
-        font-size: 1.05rem;
-        cursor: pointer;
-        box-shadow: 0 8px 22px rgba(22, 41, 74, 0.22);
-        opacity: 0.92;
-        transition: opacity 0.35s ease, transform 0.35s ease;
-      }
-      #toTop.show { opacity: 1; transform: translateY(-3px); }
-
       /* スマホ幅：縦書きと注記が本文・ボタンに重ならないようにする */
       @media (max-width: 640px) {
         .hero-inner { padding-right: 3.4rem; padding-bottom: 8.2rem; }
@@ -439,7 +420,7 @@
         html { scroll-behavior: auto; }
         .wave-a, .wave-b, .wave-c { animation: none; }
         .ripple { display: none; }
-        .btn, .tag-card, #toTop { transition: none; }
+        .btn, .tag-card { transition: none; }
       }
     </style>
   </head>
@@ -540,8 +521,6 @@
       </div>
     </footer>
 
-    <button id="toTop" type="button" aria-label="トップへ戻る">上</button>
-
     <script>
       (function () {
         var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -594,14 +573,6 @@
           }, { passive: true });
         }
 
-        /* トップへ戻る */
-        var toTop = document.getElementById("toTop");
-        window.addEventListener("scroll", function () {
-          toTop.classList.toggle("show", window.scrollY > window.innerHeight * 0.7);
-        }, { passive: true });
-        toTop.addEventListener("click", function () {
-          window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-        });
       })();
     </script>
   </body>
