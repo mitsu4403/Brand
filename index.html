@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>H2O COMMUNITY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,44 +16,23 @@
       button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2rem; }
 
       :root {
-        --kinari: #f4efe3;
-        --kinari-deep: #ece4d0;
-        --sumi: #2e2d2a;
-        --sumi-soft: #55534c;
-        --ai: #1f3a5f;
-        --ai-deep: #16294a;
-        --ai-mid: #2f5d8a;
-        --asagi: #4f83a8;
-        --mizuiro: #9dc3d9;
-        --mizu-pale: #d7e8f0;
-        --card-bg: #faf7ee;
-        --line: rgba(31, 58, 95, 0.22);
-        --wave-1: #2f5d8a;
-        --wave-2: #4f83a8;
-        --wave-3: #1f3a5f;
-        --seigaiha: rgba(31, 58, 95, 0.055);
+        --kinari: #f0f8f9;
+        --kinari-deep: #e0f0f3;
+        --sumi: #22343c;
+        --sumi-soft: #4d616a;
+        --ai: #0d607e;
+        --ai-deep: #084c68;
+        --ai-mid: #1283a6;
+        --asagi: #2ea6c8;
+        --mizuiro: #93d6ea;
+        --mizu-pale: #dcf2f7;
+        --card-bg: #fdffff;
+        --line: rgba(13, 96, 126, 0.22);
+        --wave-1: #1283a6;
+        --wave-2: #45b4d6;
+        --wave-3: #0d6e8f;
+        --seigaiha: rgba(13, 96, 126, 0.055);
         color-scheme: light;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --kinari: #101c30;
-          --kinari-deep: #0c1626;
-          --sumi: #e9e4d4;
-          --sumi-soft: #b9b4a4;
-          --ai: #9dc3d9;
-          --ai-deep: #d7e8f0;
-          --ai-mid: #7ba7c4;
-          --asagi: #5d90b3;
-          --mizuiro: #4f83a8;
-          --mizu-pale: #22354f;
-          --card-bg: #16263e;
-          --line: rgba(157, 195, 217, 0.28);
-          --wave-1: #1d3a5c;
-          --wave-2: #26507c;
-          --wave-3: #2f5d8a;
-          --seigaiha: rgba(157, 195, 217, 0.05);
-          color-scheme: dark;
-        }
       }
 
       * { box-sizing: border-box; }
@@ -71,13 +50,8 @@
 
       /* 青海波の地紋 */
       .seigaiha-bg {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cg fill='none' stroke='%231f3a5f' stroke-width='1'%3E%3Cpath d='M-36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M-24 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M-12 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M0 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M12 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M24 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M48 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M60 36a12 12 0 0 1 24 0'/%3E%3C/g%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cg fill='none' stroke='%230d607e' stroke-width='1'%3E%3Cpath d='M-36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M-24 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M-12 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M0 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M12 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M24 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M48 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M60 36a12 12 0 0 1 24 0'/%3E%3C/g%3E%3C/svg%3E");
         background-size: 72px 36px;
-      }
-      @media (prefers-color-scheme: dark) {
-        .seigaiha-bg {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='36' viewBox='0 0 72 36'%3E%3Cg fill='none' stroke='%239dc3d9' stroke-width='1'%3E%3Cpath d='M-36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M-24 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M-12 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M0 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M12 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M24 36a12 12 0 0 1 24 0'/%3E%3Cpath d='M36 36a36 36 0 0 1 72 0'/%3E%3Cpath d='M48 36a24 24 0 0 1 48 0'/%3E%3Cpath d='M60 36a12 12 0 0 1 24 0'/%3E%3C/g%3E%3C/svg%3E");
-        }
       }
 
       /* ---------- ヒーロー ---------- */
@@ -162,19 +136,16 @@
       }
       .btn-primary {
         background: linear-gradient(120deg, var(--ai-deep), var(--ai-mid));
-        color: #f4efe3;
-        box-shadow: 0 10px 24px rgba(22, 41, 74, 0.28);
+        color: #f2fafa;
+        box-shadow: 0 10px 24px rgba(8, 76, 104, 0.28);
       }
-      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(22, 41, 74, 0.34); }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(8, 76, 104, 0.34); }
       .btn-ghost {
         border: 1.5px solid var(--ai-mid);
         color: var(--ai);
         background: transparent;
       }
-      .btn-ghost:hover { background: rgba(79, 131, 168, 0.12); transform: translateY(-2px); }
-      @media (prefers-color-scheme: dark) {
-        .btn-ghost { color: var(--mizuiro); border-color: var(--asagi); }
-      }
+      .btn-ghost:hover { background: rgba(46, 166, 200, 0.14); transform: translateY(-2px); }
 
       /* 波レイヤー */
       .waves {
@@ -270,7 +241,7 @@
         border-radius: 4px 4px 14px 14px;
         text-decoration: none;
         color: var(--sumi);
-        box-shadow: 0 4px 14px rgba(22, 41, 74, 0.07);
+        box-shadow: 0 4px 14px rgba(8, 76, 104, 0.07);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         overflow: hidden;
       }
@@ -280,10 +251,10 @@
         inset: auto -30% -70% auto;
         width: 180px; height: 180px;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(79, 131, 168, 0.16), transparent 65%);
+        background: radial-gradient(circle, rgba(46, 166, 200, 0.18), transparent 65%);
         transition: transform 0.5s ease;
       }
-      .tag-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(22, 41, 74, 0.14); }
+      .tag-card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(8, 76, 104, 0.14); }
       .tag-card:hover::after { transform: scale(1.5); }
       .tag-card .kind {
         font-size: 0.78rem;
@@ -385,9 +356,6 @@
       footer {
         background: var(--ai-deep);
         color: #cfdde8;
-      }
-      @media (prefers-color-scheme: dark) {
-        footer { background: #0a1424; }
       }
       footer .wrap {
         padding-top: 2.6rem; padding-bottom: 2.6rem;
